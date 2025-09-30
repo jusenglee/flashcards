@@ -44,6 +44,16 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testImplementation("org.springframework.security:spring-security-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+
+    // UUID v7 라이브러리
+    implementation("com.github.f4b6a3:uuid-creator:5.3.5")
+
+    // Test
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("io.kotest:kotest-runner-junit5:5.9.1")
+    testImplementation("io.mockk:mockk:1.13.12")
+    testImplementation("org.testcontainers:mysql:1.20.1")
 }
 
 kotlin {
