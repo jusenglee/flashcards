@@ -53,6 +53,6 @@ class StudyState(
     @Column(nullable = false) 
     var lapses: Int = 0,   // SM-2: 실패 횟수 (망각 횟수)
     
-    @Column(name = "next_due", nullable = false) 
+    @Column(name = "next_due", nullable = false)
     var nextDue: LocalDate   // 다음 복습 예정일 (학습 스케줄링 핵심)
 )

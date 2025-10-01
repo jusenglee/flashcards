@@ -1,11 +1,28 @@
 package com.flashcards.domain.poly
 
 import com.flashcards.domain.model.OwnerType
-import com.flashcards.domain.support.*
-import jakarta.persistence.*
+import com.flashcards.domain.support.BaseTimeEntity
+import com.flashcards.domain.support.UuidBinaryConverter
+import com.flashcards.domain.support.UuidV7
+import jakarta.persistence.Column
+import jakarta.persistence.Convert
+import jakarta.persistence.Entity
+import jakarta.persistence.EnumType
+import jakarta.persistence.Enumerated
+import jakarta.persistence.Id
+import jakarta.persistence.Index
+import jakarta.persistence.Table
 import java.util.UUID
 
-@Entity @Table(
+/**
+ * 임베딩 엔티티 (후순위: 의미 기반 검색)
+ *
+ * 기능:
+ * - OwnerType/ownerId 기준으로 카드/덱 등 컨텐츠 임베딩 메타데이터 저장
+ * - 모델명, 차원 정보 기록 → 외부 벡터 스토리지와 연동 시 참조
+ */
+@Entity
+@Table(
     name = "embeddings",
     indexes = [Index(name = "idx_embed_owner", columnList = "owner_type, owner_id")]
 )
