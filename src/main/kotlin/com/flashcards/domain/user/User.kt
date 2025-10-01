@@ -1,4 +1,4 @@
-package com.flashcards.domain
+package com.flashcards.domain.user
 
 import com.flashcards.domain.support.BaseTimeEntity
 import com.flashcards.domain.support.UuidBinaryConverter
@@ -11,8 +11,8 @@ import jakarta.persistence.Table
 import java.time.Instant
 import java.util.UUID
 
-
-@Entity @Table(name = "users")
+@Entity
+@Table(name = "users")
 class User(
     @Id @Convert(converter = UuidBinaryConverter::class)
     @Column(columnDefinition = "BINARY(16)")

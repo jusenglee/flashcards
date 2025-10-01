@@ -1,5 +1,6 @@
-package com.flashcards.domain
+package com.flashcards.domain.deck
 
+import com.flashcards.domain.user.User
 import com.flashcards.domain.model.DeckVisibility
 import com.flashcards.domain.support.BaseTimeEntity
 import com.flashcards.domain.support.UuidBinaryConverter
@@ -16,7 +17,8 @@ import jakarta.persistence.ManyToOne
 import jakarta.persistence.Table
 import java.util.UUID
 
-@Entity @Table(name = "decks")
+@Entity
+@Table(name = "decks")
 class Deck (
     @Id @Convert(converter = UuidBinaryConverter::class)
     @Column(columnDefinition = "BINARY(16)")
